@@ -1,0 +1,21 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='index.css') }}">
+    <title>Movie Database</title>
+</head>
+<body id="mybody">
+
+    <h1>Search a movie with ID</h1>
+    <form method="GET" action="/get_movie">
+        <input type="number" name="movie_id" id="movie_id" placeholder="Enter Movie ID" required>
+        <button class="submitbtn" type="submit">Get Movie</button>
+    </form>
+
+    {% if error %}
+       <p>{{ error }}</p>
+    {% endif %}
+    
+</body>
+</html>
